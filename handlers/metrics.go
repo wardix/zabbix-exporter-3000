@@ -101,7 +101,7 @@ func buildMetrics() {
 	log.Println("Uniq Metrics    : ", uniqMetricNames)
 	log.Println("Uniq Description: ", uniqMetricDesc)
 
-	if len(uniqMetricNames) != len(uniqMetricDesc) {
+	if !cnf.SingleMetric && len(uniqMetricNames) != len(uniqMetricDesc) {
 		log.Print("WARNING: Number of Metrics and Description not equal")
 
 		if len(uniqMetricNames) < len(uniqMetricDesc) {
